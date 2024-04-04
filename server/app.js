@@ -274,6 +274,10 @@ app.get("/api/users/:userId", async (req, res) => {
   }
 });
 
+app.get("/dev", (req, res) => {
+  res.send('dex');
+});
+
 app.listen(port, () => {
   console.log("Server is running on port " + port);
 });
