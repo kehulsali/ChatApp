@@ -16,6 +16,10 @@ export default function Dashboard() {
   const [socket, setSocket] = useState(null);
 
   const messageRef = useRef(null);
+   const logoutHandler = () => {
+    localStorage.removeItem("user:token");
+    window.location.reload();
+  };
 
   useEffect(() => {
     setSocket(io("http://localhost:8080"));
@@ -306,7 +310,9 @@ export default function Dashboard() {
       </div>
 
       <div className="w-[25%] h-screen bg-secondary px-8 py-16 right-div">
-        <div className="text-primary text-lg">People</div>
+        <div className="text-primary text-lg">People <button className="logout" onClick={logoutHandler}>
+            Logout
+          </button></div>
         <div className="overflow-scroll overflow-x-hidden max-h-[95%] mt-5 ">
           {users.length > 0 ? (
             users.map((user) => {
