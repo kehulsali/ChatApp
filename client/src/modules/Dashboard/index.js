@@ -47,7 +47,7 @@ export default function Dashboard() {
     const loggedInUser = JSON.parse(localStorage.getItem("user:detail"));
     const fetchConversation = async () => {
       const res = await fetch(
-        `http://localhost:8000/api/conversation/${loggedInUser.id}`,
+        `https://chatapp-rgty.onrender.com/api/conversation/${loggedInUser.id}`,
         {
           method: "GET",
           headers: {
@@ -65,7 +65,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await fetch(`http://localhost:8000/api/users/${user?.id}`, {
+      const res = await fetch(`https://chatapp-rgty.onrender.com/api/users/${user?.id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function Dashboard() {
 
   const fetchMessages = async (conId, u) => {
     const res = await fetch(
-      `http://localhost:8000/api/message/${conId}?senderId=${user?.id}&&receiverId=${u?.receiverId}`,
+      `https://chatapp-rgty.onrender.com/api/message/${conId}?senderId=${user?.id}&&receiverId=${u?.receiverId}`,
       {
         method: "GET",
 
@@ -109,7 +109,7 @@ export default function Dashboard() {
       message: mesType,
       receiverId: messages?.receiver?.receiverId,
     });
-    const res = await fetch(`http://localhost:8000/api/message`, {
+    const res = await fetch(`https://chatapp-rgty.onrender.com/api/message`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
