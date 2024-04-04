@@ -34,3 +34,16 @@ code {
   background-color: rgba(61,92,92);
 
 } */
+
+.logout {
+  margin-left: 170px;
+  border: none;
+  
+  border-radius: 10px;
+  padding: 7px;
+  background-color: red;
+  color: white;
+  font-style: bold;
+
+}
+
