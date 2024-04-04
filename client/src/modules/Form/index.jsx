@@ -15,7 +15,7 @@ export default function Form({ isSignInPage = false }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch(
-      `http://localhost:8000/api/${isSignInPage ? "login" : "register"}`,
+      `https://chatapp-rgty.onrender.com/api/${isSignInPage ? "login" : "register"}`,
       {
         method: "POST",
         headers: {
